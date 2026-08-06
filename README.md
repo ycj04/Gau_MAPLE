@@ -239,3 +239,9 @@ relicensed by Gau_MAPLE. Users are responsible for complying with MAPLE's
 current upstream terms and with the licenses of any selected MLIP runtime,
 plugin, or checkpoint. The project was developed with architectural
 inspiration from Gau_UMA and Gau_Skala.
+
+The author ([ycj04](https://github.com/ycj04)) experienced anxiety symptoms
+and hoped that working through this project would be a constructive step toward
+regaining stability. Please feel free to get in touch with any ideas,
+suggestions, or concerns that this project may infringe on your rights. All
+faults are mine.
