@@ -1,0 +1,10 @@
+%chk=ammonia_aimnet2_ts.chk
+#p opt=(ts,calcfc,noeigentest,nomicro,maxcycles=50) nosymm external='/absolute/path/to/maple-env/bin/gau-maple --config /absolute/path/to/Gau_MAPLE/config/profiles.toml --profile aimnet2'
+
+Planar ammonia inversion transition-state optimization
+
+0 1
+N 0.00000000 0.00000000 0.00000000
+H 1.01200000 0.00000000 0.00000000
+H -0.50600000 0.87641800 0.00000000
+H -0.50600000 -0.87641800 0.00000000

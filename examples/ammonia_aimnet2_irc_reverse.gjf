@@ -1,0 +1,3 @@
+%oldchk=ammonia_aimnet2_ts.chk
+%chk=ammonia_aimnet2_irc_reverse.chk
+#p irc=(reverse,rcfc,maxpoints=12,stepsize=5) geom=allcheck nosymm external='/absolute/path/to/maple-env/bin/gau-maple --config /absolute/path/to/Gau_MAPLE/config/profiles.toml --profile aimnet2'

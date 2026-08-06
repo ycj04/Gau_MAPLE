@@ -1,0 +1,2 @@
+%chk=ammonia_aimnet2_ts.chk
+#p freq geom=allcheck nosymm external='/absolute/path/to/maple-env/bin/gau-maple --config /absolute/path/to/Gau_MAPLE/config/profiles.toml --profile aimnet2'

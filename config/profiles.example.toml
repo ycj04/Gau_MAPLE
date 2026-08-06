@@ -1,0 +1,132 @@
+# Gau_MAPLE example configuration.
+# Copy this file to config/profiles.toml and replace every /absolute/path.
+
+[project]
+runtime_dir = "/tmp/gau-maple-{user}"
+
+[profiles.aimnet2]
+model = "aimnet2"
+device = "cpu"
+charge_policy = "supported"
+multiplicity_policy = "singlet_only"
+strict_charge_multiplicity = true
+reject_mm_charges = true
+
+[profiles.aimnet2.model_options]
+hessian = "analytic"
+
+[profiles.aimnet2nse]
+model = "aimnet2nse"
+device = "cpu"
+charge_policy = "supported"
+multiplicity_policy = "supported"
+strict_charge_multiplicity = true
+reject_mm_charges = true
+
+[profiles.aimnet2nse.model_options]
+hessian = "analytic"
+
+[profiles.ani1x]
+model = "ani1x"
+device = "cpu"
+charge_policy = "neutral_only"
+multiplicity_policy = "singlet_only"
+
+[profiles.ani1ccx]
+model = "ani1ccx"
+device = "cpu"
+charge_policy = "neutral_only"
+multiplicity_policy = "singlet_only"
+
+[profiles.ani1xnr]
+model = "ani1xnr"
+device = "cpu"
+charge_policy = "neutral_only"
+multiplicity_policy = "singlet_only"
+
+[profiles.ani2x]
+model = "ani2x"
+device = "cpu"
+charge_policy = "neutral_only"
+multiplicity_policy = "singlet_only"
+
+[profiles.maceoff23m]
+model = "maceoff23m"
+device = "cpu"
+charge_policy = "neutral_only"
+multiplicity_policy = "singlet_only"
+
+# These two profiles require the separately installed maple_mace_native plugin.
+[profiles.maceomol_native]
+model = "maceomol_native"
+device = "cpu"
+charge_policy = "supported"
+multiplicity_policy = "supported"
+
+[profiles.maceomol_native.model_options]
+module = "maple_mace_native"
+
+[profiles.macepolm_native]
+model = "macepolm_native"
+device = "cpu"
+charge_policy = "supported"
+multiplicity_policy = "supported"
+
+[profiles.macepolm_native.model_options]
+module = "maple_mace_native"
+
+[profiles.uma-s-1p2]
+model = "uma"
+device = "cpu"
+charge_policy = "supported"
+multiplicity_policy = "supported"
+strict_charge_multiplicity = true
+reject_mm_charges = true
+
+[profiles.uma-s-1p2.model_options]
+size = "uma-s-1p2"
+task = "omol"
+inference = "default"
+
+[profiles.esen-sm-conserving-all]
+model = "esen_sm_conserving_all"
+device = "cpu"
+charge_policy = "supported"
+multiplicity_policy = "supported"
+strict_charge_multiplicity = true
+reject_mm_charges = true
+
+[profiles.esen-sm-conserving-all.model_options]
+module = "maple.function.calculator.esen_plugin"
+model_path = "/absolute/path/to/esen_sm_conserving_all.pt"
+
+[servers.maple_server]
+executable = "/absolute/path/to/maple-env/bin/gau-maple-server"
+profiles = [
+  "aimnet2", "aimnet2nse", "ani1x", "ani1ccx", "ani1xnr", "ani2x",
+  "maceoff23m", "maceomol_native", "macepolm_native",
+]
+socket = "{runtime_dir}/maple_server.sock"
+pid_file = "{runtime_dir}/maple_server.pid"
+log = "{runtime_dir}/maple_server.server.log"
+stdout = "{runtime_dir}/maple_server.stdout.log"
+preload = true
+startup_timeout = 900
+shutdown_timeout = 20
+
+[servers.maple_server.environment]
+MAPLE_CALCULATOR_PLUGINS = ""
+
+[servers.meta_server]
+executable = "/absolute/path/to/meta-env/bin/gau-maple-server"
+profiles = ["uma-s-1p2", "esen-sm-conserving-all"]
+socket = "{runtime_dir}/meta_server.sock"
+pid_file = "{runtime_dir}/meta_server.pid"
+log = "{runtime_dir}/meta_server.server.log"
+stdout = "{runtime_dir}/meta_server.stdout.log"
+preload = true
+startup_timeout = 900
+shutdown_timeout = 20
+
+[servers.meta_server.environment]
+MAPLE_CALCULATOR_PLUGINS = ""

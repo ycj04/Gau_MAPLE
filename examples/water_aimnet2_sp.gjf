@@ -1,0 +1,9 @@
+%chk=aimnet2_water_single_point.chk
+#p external='/absolute/path/to/maple-env/bin/gau-maple --config /absolute/path/to/Gau_MAPLE/config/profiles.toml --profile aimnet2'
+
+AIMNet2 water single point
+
+0 1
+O 0.000000 0.000000 0.000000
+H 0.757160 0.000000 0.586260
+H -0.757160 0.000000 0.586260

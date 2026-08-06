@@ -1,0 +1,8 @@
+%chk=aimnet2-nse_hydroxyl_doublet.chk
+#p external='/absolute/path/to/maple-env/bin/gau-maple --config /absolute/path/to/Gau_MAPLE/config/profiles.toml --profile aimnet2nse'
+
+AIMNet2-NSE hydroxyl doublet
+
+0 2
+O 0.000000 0.000000 0.000000
+H 0.970000 0.000000 0.000000
