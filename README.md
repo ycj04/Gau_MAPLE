@@ -6,6 +6,11 @@ gradients, and optional Hessians to persistent MAPLE calculator servers.
 Gaussian remains responsible for optimization, constraints, transition-state
 searches, numerical frequencies, and IRC propagation.
 
+The practical purpose of Gau_MAPLE is to make machine-learning interatomic
+potential (MLIP) methods convenient to use from within Gaussian. MAPLE serves
+as an integrated platform that exposes a unified calculator interface to those
+methods, making it a natural backend for this connection.
+
 ## Scope
 
 This is interface software, not a chemical-accuracy benchmark. Normal Gaussian
